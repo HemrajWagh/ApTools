@@ -1,5 +1,6 @@
 package org.alchemy.testcases;
 
+import org.alchemy.Utility.Utility;
 import org.alchemy.base.TestBase;
 import org.alchemy.pages.HomePage;
 import org.alchemy.pages.LoginPage;
@@ -34,24 +35,30 @@ public class LoginPageTest extends TestBase {
 	}
 	
 	@Test(priority=2)
+	public void loginTest() throws InterruptedException
+	{
+		homePage = loginPage.login(prop.getProperty("companyName"), prop.getProperty("emailId"), prop.getProperty("password"));
+		Utility.captureScreenshot(driver, "LoginPage1");
+	}
+	
+	@Test(priority=3)
 	public void validateDigiSystemImageTest(){
 		boolean flag = loginPage.validateDigiSystemImage();
 		Assert.assertTrue(flag);
 	}
 	
-	@Test(priority=3)
-	public void loginTest() throws InterruptedException
+	@Test(priority=4)
+	public void validateAPLableTest()
 	{
-		homePage = loginPage.login(prop.getProperty("companyName"), prop.getProperty("emailId"), prop.getProperty("password"));
+		boolean flag = loginPage.validateAPLable();
+		Assert.assertTrue(flag);
 	}
 	
 	
-	
-	
-//	@AfterMethod
-//	public void tearDown()
-//	{
-//		driver.quit();
-//	}
+	@AfterMethod
+	public void tearDown()
+	{
+		driver.quit();
+	}
 	
 }

@@ -26,24 +26,21 @@ public class LoginPage extends TestBase{
 	@FindBy(xpath=".//*[@id='divLogin']/form/input")
 	WebElement loginBtn;
 	
-	@FindBy(xpath=".//*[@id='aspnetForm']/div[3]/div[1]/div[1]/img")
+	@FindBy(xpath=".//*[@id='logo']/div/div")
+	WebElement APLable;
+	
+	@FindBy(xpath=".//*[@id='logo']/img")
 	WebElement DigiImage;
 	
 	
 	public HomePage login(String compName, String email, String pwd ) throws InterruptedException
 	{
-		Thread.sleep(2000);
 		companyName.sendKeys(compName);
-		Thread.sleep(2000);
 		emailId.sendKeys(email);
-		Thread.sleep(2000);
 		password.sendKeys(pwd);
-		Thread.sleep(2000);
 		loginBtn.click();
 		return new HomePage();
 	}
-	
-	
 	
 	public String validateLoginPageTitle()
 	{
@@ -53,6 +50,11 @@ public class LoginPage extends TestBase{
 	public boolean validateDigiSystemImage()
 	{
 		return  DigiImage.isDisplayed();
+	}
+	
+	public boolean validateAPLable()
+	{
+		return  APLable.isDisplayed();
 	}
 	
 

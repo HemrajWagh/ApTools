@@ -5,7 +5,10 @@
     <classes>
       <class name="org.alchemy.testcases.LoginPageTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="loginTest"/>
+          <include name="loginPageTitleTest"/>
           <include name="validateDigiSystemImageTest"/>
         </methods>
       </class> <!-- org.alchemy.testcases.LoginPageTest -->
