@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.alchemy.testcases.LoginPageTest">
+      <class name="org.alchemy.testcases.HomePageTest">
         <methods>
-          <include name="tearDown"/>
+          <include name="verifyclickOnUserManagementTest"/>
           <include name="setUp"/>
-          <include name="loginTest"/>
-          <include name="loginPageTitleTest"/>
-          <include name="validateDigiSystemImageTest"/>
+          <include name="verifyCorrectUserNameTest"/>
+          <include name="verifyHomePageTitleTest"/>
+          <include name="verifyClickOnNewUserRecordTest"/>
         </methods>
-      </class> <!-- org.alchemy.testcases.LoginPageTest -->
+      </class> <!-- org.alchemy.testcases.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

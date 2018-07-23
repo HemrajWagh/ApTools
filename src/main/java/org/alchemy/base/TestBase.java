@@ -10,6 +10,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 
 public class TestBase {
 	
@@ -42,7 +47,7 @@ public class TestBase {
 			System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 			driver = new ChromeDriver();
 		}
-		else if (browserName.equalsIgnoreCase("FF"))
+		else if (browserName.equalsIgnoreCase("firefox"))
 		{
 			System.setProperty("webdriver.firefox.marionette", "./Driver/geckodriver1.exe");
 			WebDriver driver = new FirefoxDriver();
@@ -54,6 +59,24 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 		driver.get(prop.getProperty("applicationUrl"));
+		
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/ExtentHtml1.html");
+		ExtentReports extent = new ExtentReports();
+			extent.attachReporter(reporter);
+			ExtentTest logger = extent.createTest(driver.getTitle());
+			logger.log(Status.PASS, driver.getTitle()+ "PassedTest");
+			extent.flush();
+
+	}
+	
+	public void ExReport()
+	{
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/ExtentHtml1.html");
+		ExtentReports extent = new ExtentReports();
+			extent.attachReporter(reporter);
+			ExtentTest logger = extent.createTest(driver.getTitle());
+			logger.log(Status.PASS, driver.getTitle()+ "PassedTest");
+			extent.flush();
 	}
 	
 

@@ -1,5 +1,6 @@
 package org.alchemy.testcases;
 
+import org.alchemy.Utility.Utility;
 import org.alchemy.base.TestBase;
 import org.alchemy.pages.CreatNewUserRecord;
 import org.alchemy.pages.HomePage;
@@ -9,12 +10,14 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+
 public class HomePageTest extends TestBase{
 	
 	LoginPage loginPage;
 	HomePage homePage;
-	UserManagementPage userManagementPage = new UserManagementPage();
-	CreatNewUserRecord creatNewUserRecord = new CreatNewUserRecord();
+	UserManagementPage userManagementPage;
+	CreatNewUserRecord creatNewUserRecord;
 	
 	public HomePageTest()	
 	{
@@ -25,6 +28,8 @@ public class HomePageTest extends TestBase{
 	public void setUp() throws InterruptedException {
 		initialization();
 		loginPage = new LoginPage();
+		userManagementPage = new UserManagementPage();
+		creatNewUserRecord = new CreatNewUserRecord();
 		homePage = loginPage.login(prop.getProperty("companyName"), prop.getProperty("emailId"), prop.getProperty("password"));
 	}
 	
@@ -42,7 +47,6 @@ public class HomePageTest extends TestBase{
 		boolean flag = homePage.verifyCorrectUserName();
 		Assert.assertTrue(flag);
 	}
-	
 
 	@Test(priority=3)
 	public void verifyclickOnUserManagementTest() throws InterruptedException
@@ -51,7 +55,7 @@ public class HomePageTest extends TestBase{
 	}
 	
 	@Test(priority=4)
-	public void verifyClickOnNewUserRecordTest()
+	public void verifyClickOnNewUserRecordTest() throws InterruptedException
 	{
 		creatNewUserRecord = homePage.verifyClickOnNewUserRecord();
 	}
