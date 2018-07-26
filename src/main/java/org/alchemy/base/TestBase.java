@@ -69,6 +69,7 @@ public class TestBase {
 
 	}
 	
+	
 	public void ExReport()
 	{
 		ExtentHtmlReporter reporter = new ExtentHtmlReporter("./Reports/ExtentHtml1.html");

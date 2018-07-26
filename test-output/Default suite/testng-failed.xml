@@ -7,9 +7,6 @@
         <methods>
           <include name="verifyclickOnUserManagementTest"/>
           <include name="setUp"/>
-          <include name="verifyCorrectUserNameTest"/>
-          <include name="verifyHomePageTitleTest"/>
-          <include name="verifyClickOnNewUserRecordTest"/>
         </methods>
       </class> <!-- org.alchemy.testcases.HomePageTest -->
     </classes>

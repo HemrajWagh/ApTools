@@ -69,10 +69,10 @@ public class LoginPageTest extends TestBase {
 	public void validateAPLableTest()
 	{
 		boolean flag = loginPage.validateAPLable();
-		ExReport();
-		Driver.test.log(LogStatus.PASS, "Newtest1");
-		Driver.test.log(LogStatus.FAIL, "Failed Tests");
-		Driver.test.addScreenCapture("./Screenshot/"+1+".png");
+//		ExReport();
+//		Driver.test.log(LogStatus.PASS, "Newtest1");
+//		Driver.test.log(LogStatus.FAIL, "Failed Tests");
+//		Driver.test.addScreenCapture("./Screenshot/"+1+".png");
 		Utility.captureScreenshot(driver, "LableTest");
 		Assert.assertTrue(flag);
 	}

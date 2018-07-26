@@ -8,9 +8,6 @@
           <include name="tearDown"/>
           <include name="validateAPLableTest"/>
           <include name="setUp"/>
-          <include name="loginTest"/>
-          <include name="loginPageTitleTest"/>
-          <include name="validateDigiSystemImageTest"/>
         </methods>
       </class> <!-- org.alchemy.testcases.LoginPageTest -->
     </classes>
