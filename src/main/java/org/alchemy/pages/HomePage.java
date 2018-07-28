@@ -1,6 +1,7 @@
 package org.alchemy.pages;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import org.alchemy.Utility.Utility;
@@ -85,6 +86,14 @@ public class HomePage extends TestBase{
 	WebElement submit;
 	
 	
+	@FindBy(xpath="//span[@class='dxnb-ghtext' and contains(text(),'Group User Mapping')]")
+	WebElement GroupUserMapping;
+	
+	@FindBy(xpath="//span[@class='dxnb-ghtext' and contains(text(),'Groups List')]")
+	WebElement GroupsList; 
+	
+	
+	
 	public String validateHomePageTitle()
 	{
 		return driver.getTitle();
@@ -152,8 +161,9 @@ public class HomePage extends TestBase{
 			Thread.sleep(2000);
 			Utility.captureScreenshot(driver, "CreatNewUser");
 			submit.click();
+			Thread.sleep(3000);
 		 
-		// driver.switchTo().window(Parent_Window);
+		 driver.switchTo().window(parent);
 		
 		//Actions action = new Actions(driver);
 		
@@ -161,7 +171,41 @@ public class HomePage extends TestBase{
 		
 	
 		return new CreatNewUserRecord();
+		
 	}
+	
+	public GroupUserMappingPage verifyGroupUserMappingLink() throws InterruptedException
+	{
+		Thread.sleep(2000);
+		GroupUserMapping.click();
+		Thread.sleep(3000);
+		return new GroupUserMappingPage();
+	}
+	
+	public GroupsListPage verifyGroupsListLink() throws InterruptedException
+	{
+		GroupsList.click();
+		Thread.sleep(2000);
+		return new GroupsListPage(); 
+	}
+	
+	public Group enterIntoGroup() throws InterruptedException
+	{
+		//*[@id='ctl00_ContentPlaceHolder1_ASPxGridView1_tccell0_0']/a
+		String xpath_start = ".//*[@id='ctl00_ContentPlaceHolder1_ASPxGridView1_tccell";
+		String xpath_Group = prop.getProperty("GroupName");
+		String xpath_end = "_0']/a";
+				
+		WebElement Gr = driver.findElement(By.xpath(xpath_start+xpath_Group+xpath_end));
+		System.out.println(Gr);
+		Gr.click();
+		Thread.sleep(5000);
+		return new Group();
+	}
+	
+	
+	
+	
 }
 
 

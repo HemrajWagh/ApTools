@@ -6,13 +6,12 @@
   </listeners>
   <test thread-count="5" name="Santiy Test 1(failed)">
     <classes>
-      <class name="org.alchemy.testcases.HomePageTest">
+      <class name="org.alchemy.testcases.GroupTest">
         <methods>
+          <include name="verifyGroupPageTitleTest"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="verifyHomePageTitleTest"/>
         </methods>
-      </class> <!-- org.alchemy.testcases.HomePageTest -->
+      </class> <!-- org.alchemy.testcases.GroupTest -->
     </classes>
   </test> <!-- Santiy Test 1(failed) -->
 </suite> <!-- Failed suite [Suite 1] -->

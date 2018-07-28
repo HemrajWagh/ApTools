@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.alchemy.testcases.HomePageTest">
+      <class name="org.alchemy.testcases.GroupTest">
         <methods>
-          <include name="verifyclickOnUserManagementTest"/>
+          <include name="verifyGroupPageTitleTest"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- org.alchemy.testcases.HomePageTest -->
+      </class> <!-- org.alchemy.testcases.GroupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

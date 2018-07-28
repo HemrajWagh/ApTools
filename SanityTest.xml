@@ -8,7 +8,7 @@
   <test name="Santiy Test 1" >
   
     <classes>
-      <class name="org.alchemy.testcases.HomePageTest"/>
+      <class name="org.alchemy.testcases.GroupTest"/>
     </classes>
     
  </test>
